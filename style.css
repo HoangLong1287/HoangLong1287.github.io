@@ -1,10 +1,14 @@
 /* Reset và biến màu */
 :root {
-    --primary: #ff6b6bff;
-    --secondary: #4ECDC4;
-    --accent: #45B7D1;
-    --background: #F9F9F9;
-    --text: #2D3436;
+    /* Cải thiện bảng màu */
+    --primary: #007bff; /* Xanh dương hiện đại cho các hành động chính */
+    --secondary: #28a745; /* Xanh lá cây cho thành công/hỗ trợ */
+    --accent: #dc3545; /* Đỏ cho nút CTA nổi bật/cảnh báo */
+    --background: #f8f9fa; /* Nền trắng/xám nhạt sạch sẽ */
+    --text: #343a40; /* Màu chữ đen đậm, dễ đọc */
+    --light-text: #6c757d; /* Màu chữ phụ */
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Đổ bóng mềm mại */
+    --transition-speed: 0.3s;
 }
 
 * {
@@ -18,11 +22,57 @@ body {
     background-color: var(--background);
     color: var(--text);
     line-height: 1.6;
+    scroll-behavior: smooth; /* Thêm cuộn mượt cho toàn bộ trang */
+}
+
+/* Container chung */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography và Headings */
+h1, h2, h3, h4 {
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: #0056b3; /* Màu xanh đậm hơn khi hover */
 }
 
 /* Header */
 .header {
-    background: rgba(3, 236, 15, 0.164);
+    background: rgba(255, 255, 255, 0.95); /* Nền gần như trắng mờ */
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
@@ -30,121 +80,355 @@ body {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-weight: 700;
+    font-weight: 800;
     color: var(--primary);
+    font-size: 1.5rem;
 }
 
 .logo img {
-    height: 40px;
+    height: 45px; /* Tăng kích thước logo */
+    border-radius: 5px; /* Bo góc nhẹ */
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: var(--text);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width var(--transition-speed);
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Section chung */
+section {
+    padding: 80px 0; /* Tăng khoảng cách giữa các section */
 }
 
 /* Hero Section */
 .hero {
-    padding: 120px 0;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    padding: 150px 0 100px; /* Thêm padding trên để tránh header fixed */
+    background: linear-gradient(135deg, var(--primary) 0%, #4a90e2 100%); /* Gradient tinh tế hơn */
+    color: white;
 }
 
-.hero-content {
+.hero .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
     color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-content span {
+    font-style: italic;
+    display: block;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button {
-    background: var(--accent);
+    background: var(--accent); /* Nút CTA nổi bật */
     color: white;
-    padding: 12px 30px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: transform 0.3s;
+    padding: 14px 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
+    background-color: #c0392b; /* Màu đỏ đậm hơn khi hover */
+    transform: translateY(-2px);
 }
 
 /* Support Cards */
+.support {
+    background-color: white;
+}
+
 .support-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
 .support-card {
-    background: white;
+    background: var(--background);
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 10px;
     text-align: center;
-    transition: all 0.3s;
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed);
+    border-top: 5px solid var(--secondary); /* Điểm nhấn màu */
 }
 
 .support-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .support-card i {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--secondary);
     margin-bottom: 15px;
 }
 
+.support-card img {
+    height: 50px;
+    width: 50px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.support-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.support-card p {
+    color: var(--light-text);
+}
+
 /* FAQ */
+.faq {
+    background-color: #f0f0f5; /* Nền xám nhẹ cho phần FAQ */
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .faq-item {
     background: white;
     margin-bottom: 15px;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
     overflow: hidden;
 }
 
 .faq-question {
-    padding: 20px;
+    padding: 18px 25px;
     background: var(--primary);
     color: white;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color var(--transition-speed);
+}
+
+.faq-question:hover {
+    background-color: #0056b3;
+}
+
+.faq-question span h4 {
+    margin: 0;
+    color: white;
+    font-weight: 600;
+}
+
+.faq-question i {
+    font-size: 1.2rem;
+    transition: transform var(--transition-speed);
 }
 
 .faq-answer {
-    padding: 0 20px;
+    padding: 0 25px;
     max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s;
+    overflow: hidden; 
+    overflow-y: auto; /* Kích hoạt cuộn dọc nếu nội dung vượt quá chiều cao */
+    transition: max-height var(--transition-speed) ease-in-out, padding var(--transition-speed);
 }
+
+.faq-answer[style*="max-height"]:not([style*="max-height: 0"]) {
+    padding: 15px 25px 20px;
+    /* max-height: 300px !important; // Bỏ comment nếu muốn giới hạn khung cuộn */
+}
+
+.faq-answer p {
+    margin: 5px 0;
+    color: var(--text);
+}
+
 
 /* Contact Form */
 .contact-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     gap: 50px;
+    align-items: start;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 12px;
-    border: 2px solid #ddd;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.contact-form button[type="submit"] {
+    background-color: var(--secondary);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: background-color var(--transition-speed);
+    width: 100%;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+
+.contact-info {
+    padding: 20px;
+    background-color: var(--background);
     border-radius: 8px;
-    margin-bottom: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.info-item p, .info-item h4 {
+    margin: 0;
+    color: var(--light-text);
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
 }
 
 .social-links a {
-    font-size: 24px;
-    margin-right: 15px;
+    font-size: 28px;
     color: var(--text);
-    transition: color 0.3s;
+    transition: color var(--transition-speed), transform var(--transition-speed);
 }
 
 .social-links a:hover {
     color: var(--primary);
+    transform: translateY(-2px);
 }
 
-/* Responsive */ 
-@media (max-width: 768px) {
+/* Footer */
+.footer {
+    background-color: var(--text);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    border-top: 5px solid var(--primary);
+}
+
+.footer h4 {
+    color: white;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+}
+
+.footer #privacy_area a {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+}
+
+.footer #privacy_area a:hover {
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
     .contact-wrapper {
         grid-template-columns: 1fr;
     }
@@ -152,6 +436,42 @@ body {
     .hero .container {
         flex-direction: column;
         text-align: center;
+    }
+
+    .hero-image {
+        order: -1; /* Đẩy ảnh lên trên nội dung trên di động */
+        margin-bottom: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-menu {
+        /* Bạn sẽ cần thêm nút toggle (hamburger menu) và logic JS/CSS để hiển thị/ẩn menu này */
+        display: none; 
+    }
+
+    .header .container {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        margin-top: 30px;
+    }
+
+    .faq-question {
+        padding: 15px 20px;
     }
 }
 /* Headrozing */
