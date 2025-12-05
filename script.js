@@ -12,12 +12,43 @@ document.querySelectorAll('.faq-question').forEach(item => {
             answer.style.maxHeight = null; // Đóng lại
             icon.style.transform = 'rotate(0deg)'; // Quay lại 0 độ
         } else {
-            // Đặt max-height đủ lớn để chứa nội dung, kích hoạt cuộn nếu cần
-            answer.style.maxHeight = answer.scrollHeight + 'px'; 
+            // Đóng tất cả các mục khác trước khi mở mục này (Tùy chọn)
+            /*
+            document.querySelectorAll('.faq-answer').forEach(ans => {
+                if (ans !== answer) {
+                    ans.style.maxHeight = null;
+                    ans.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                }
+            });
+            */
+
+            // Mở ra
+            answer.style.maxHeight = answer.scrollHeight + 'px';
             icon.style.transform = 'rotate(180deg)'; // Xoay 180 độ
         }
     });
 });
+
+// Xử lý Mobile Menu (Hamburger)
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        // Toggle class 'active' để hiển thị/ẩn menu
+        navMenu.classList.toggle('active');
+    });
+
+    // Đóng menu khi click vào một link (chỉ áp dụng trên mobile)
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 992) {
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+}
+
 
 // Scroll mượt
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
