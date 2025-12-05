@@ -12,16 +12,6 @@ document.querySelectorAll('.faq-question').forEach(item => {
             answer.style.maxHeight = null; // Đóng lại
             icon.style.transform = 'rotate(0deg)'; // Quay lại 0 độ
         } else {
-            // Đóng tất cả các mục khác trước khi mở mục này (Tùy chọn)
-            /*
-            document.querySelectorAll('.faq-answer').forEach(ans => {
-                if (ans !== answer) {
-                    ans.style.maxHeight = null;
-                    ans.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
-                }
-            });
-            */
-
             // Mở ra
             answer.style.maxHeight = answer.scrollHeight + 'px';
             icon.style.transform = 'rotate(180deg)'; // Xoay 180 độ

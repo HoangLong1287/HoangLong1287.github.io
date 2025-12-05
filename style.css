@@ -456,9 +456,13 @@ section {
 
 /* Màn hình nhỏ hơn 992px (Tablet & Mobile) */
 @media (max-width: 992px) {
+    /* FIX: Giảm Padding của Hero Section để nội dung chính không bị che khuất */
+    .hero {
+        padding: 100px 0 60px; /* Giảm padding trên và dưới */
+    }
+
     /* Header (Mobile/Tablet) */
     .nav-menu {
-        /* Thiết lập Menu Mobile ẩn theo mặc định */
         position: absolute;
         top: 65px;
         right: 0;
@@ -470,10 +474,9 @@ section {
         border-radius: 5px;
         transform: translateX(100%); /* Ẩn ra ngoài màn hình */
         opacity: 0;
-        pointer-events: none; /* Vô hiệu hóa click khi ẩn */
+        pointer-events: none;
     }
     
-    /* Khi menu được mở bằng JS (thêm class .active) */
     .nav-menu.active {
         transform: translateX(0);
         opacity: 1;
@@ -496,7 +499,7 @@ section {
     }
 
     .menu-toggle {
-        display: block; /* Hiện nút hamburger */
+        display: block; 
     }
     
     .hero-content h1 {
@@ -509,22 +512,22 @@ section {
 
     /* Hero Section */
     .hero .container {
-        flex-direction: column; /* Xếp chồng nội dung */
+        flex-direction: column; 
         text-align: center;
     }
 
     .hero-image {
-        order: -1; /* Đẩy ảnh lên trên nội dung */
+        order: -1; 
         margin-bottom: 30px;
     }
 
     section {
-        padding: 60px 0; /* Giảm padding section trên mobile/tablet */
+        padding: 60px 0; 
     }
 
-    /* Contact Section */
+    /* FIX: Contact Section chuyển bố cục 2 cột thành 1 cột */
     .contact-wrapper {
-        grid-template-columns: 1fr; /* Chuyển bố cục 2 cột thành 1 cột */
+        grid-template-columns: 1fr; 
         padding: 30px;
     }
     
@@ -533,7 +536,7 @@ section {
     }
 
     .social-links {
-        justify-content: center; /* Căn giữa social links */
+        justify-content: center; 
     }
 }
 
@@ -551,9 +554,14 @@ section {
         font-size: 1.4rem;
     }
 
+    /* FIX: Giảm padding Hero Section thêm nữa trên màn hình rất nhỏ */
+     .hero {
+        padding: 90px 0 50px;
+    }
+
     /* Support Cards */
     .support-grid {
-        grid-template-columns: 1fr; /* Mỗi card chiếm một hàng */
+        grid-template-columns: 1fr; 
     }
 
     /* FAQ */
