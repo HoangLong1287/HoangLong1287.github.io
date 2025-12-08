@@ -216,7 +216,66 @@ section {
     color: white;
 }
 
-/* Support Cards */
+/* === CSS MỚI: ABOUT US SECTION === */
+.about {
+    background-color: var(--background);
+    padding-bottom: 40px; 
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content .mission-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.about-content .mission-text strong {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.mission-points {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.point-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.point-item i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.point-item h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.point-item p {
+    color: var(--light-text);
+    font-size: 1rem;
+}
+
+
+/* Support Cards (Đã đổi tên thành Values/Support) */
 .support {
     background-color: var(--section-bg);
 }
@@ -425,30 +484,80 @@ section {
     transform: translateY(-2px);
 }
 
-/* Footer */
+/* === CSS MỚI: FOOTER MỚI (Nhiều cột) === */
 .footer {
     background-color: var(--text);
     color: white;
-    text-align: center;
-    padding: 25px 0;
+    padding: 40px 0 20px; 
     font-size: 0.9rem;
     border-top: 5px solid var(--primary);
 }
 
-.footer h4 {
-    color: white;
-    margin: 0 0 10px 0;
-    font-weight: 400;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.footer-col {
+    width: 30%; /* Chia 3 cột chính */
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    color: var(--primary); 
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
 }
 
 .footer-links a {
     color: rgba(255, 255, 255, 0.7);
-    font-weight: 400;
+    transition: color 0.3s;
 }
 
 .footer-links a:hover {
     color: white;
 }
+
+.social-links-footer {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links-footer a {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s;
+}
+
+.social-links-footer a:hover {
+    color: var(--primary);
+}
+
+.copyright {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+}
+
 
 /* ===================================== */
 /* === RESPONSIVE FIXES AND OPTIMIZATION === */
@@ -525,6 +634,16 @@ section {
         padding: 60px 0; 
     }
 
+    /* ABOUT SECTION RESPONSIVE */
+    .mission-points {
+        flex-direction: column;
+    }
+
+    .point-item {
+        margin-bottom: 15px;
+    }
+
+
     /* FIX: Contact Section chuyển bố cục 2 cột thành 1 cột */
     .contact-wrapper {
         grid-template-columns: 1fr; 
@@ -537,6 +656,25 @@ section {
 
     .social-links {
         justify-content: center; 
+    }
+    
+    /* FOOTER RESPONSIVE */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-col {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .footer-links {
+        padding-left: 0;
+    }
+
+    .social-links-footer {
+        justify-content: center;
     }
 }
 

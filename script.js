@@ -40,13 +40,17 @@ if (menuToggle && navMenu) {
 }
 
 
-// Scroll mượt
+// Scroll mượt (Đã điều chỉnh để tính toán vị trí cuộn)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetElement = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
         if (targetElement) {
-            targetElement.scrollIntoView({
+            const headerHeight = document.querySelector('.header').offsetHeight; // Lấy chiều cao header
+            window.scrollTo({
+                top: targetElement.offsetTop - headerHeight, 
                 behavior: 'smooth'
             });
         }
