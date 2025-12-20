@@ -3,150 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IQG - SCP: SL Vietnam</title>
+    <title>I-QG Lab - QT Gang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="header">
-        <nav class="container">
+        <nav class="container navbar">
             <a href="#home" class="logo">
-                <img src="images/logo2.avif" alt="QT Gang Logo">
-                <span>I-QG Laboratory</span>
+                <div class="logo-img-wrapper">
+                    <img src="images/logo2.avif" alt="I-QG Logo">
+                </div>
+                <span>I-QG Laboratory<span class="highlight">.</span></span>
             </a>
+            
             <ul class="nav-menu">
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#about">Về chúng tôi</a></li> <li><a href="#values">Giá trị cốt lõi</a></li> <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="#home" class="nav-link active">Trang chủ</a></li>
+                <li><a href="#server" class="nav-link">Máy chủ</a></li>
+                <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+                <li><a href="#rules" class="nav-link">Luật lệ</a></li>
+                <li><a href="#faq" class="nav-link">Hỏi đáp</a></li>
+                <li><a href="#contact" class="nav-link btn-nav">Liên hệ</a></li>
             </ul>
-            <i class="fas fa-bars menu-toggle"></i> 
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
     
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-               
-                <h1>I-QG Laboratory!</h1>
-                <h3>Cộng đồng SCP: Secret Laboratory Vietnam
-                </h3>
-                <span>-Website Hỗ trợ người dùng chính thức-</span>
-            
-                <a href="#about" class="cta-button">Khám phá ngay</a>
-            </div>
-            <div class="hero-image">
-                <img src="images/SCPVIETNAM.png" alt="QT Gang Community">
-            </div>
-        </div>
-    </section>
-    
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Về chúng tôi & Sứ mệnh</h2>
-            <div class="about-content">
-                <p class="mission-text">
-                    <strong>I-QG Laboratory</strong> là một cộng đồng phát triển và hỗ trợ người chơi game <strong>SCP: Secret Laboratory</strong> tại Việt Nam. 
-                    Sứ mệnh của chúng tôi là xây dựng môi trường game lành mạnh, cung cấp máy chủ chất lượng và hỗ trợ kỹ thuật kịp thời cho cộng đồng.
-                </p>
-                <div class="mission-points">
-                    <div class="point-item">
-                        <i class="fas fa-server"></i>
-                        <h4>Máy chủ Chất lượng</h4>
-                        <p>Cung cấp các máy chủ ổn định, ping thấp, đặt tại Việt Nam để đảm bảo trải nghiệm tốt nhất.</p>
-                    </div>
-                    <div class="point-item">
-                        <i class="fas fa-users-gear"></i>
-                        <h4>Hỗ trợ Cộng đồng</h4>
-                        <p>Xây dựng kênh giao tiếp và hỗ trợ chính thức để lắng nghe ý kiến và giải quyết vấn đề của người chơi.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="values" class="support">
-        <div class="container">
-            <h2>Giá trị cốt lõi</h2>
-            <div class="support-grid">
-                <div class="support-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>Hỗ trợ Kỹ thuật</h3>
-                    <p>Giải quyết các vấn đề kỹ thuật hoặc thắc mắc liên quan đến hoạt động của máy chủ và Cộng đồng.</p>
-                </div>
-    
-                <div class="support-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>An toàn & Công bằng</h3>
-                    <p>Đảm bảo môi trường game công bằng, loại bỏ các hành vi gian lận và toxic.</p>
-                </div>
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content reveal-left">
+                <div class="badge">Chào mừng đến với Website</div>
+                <h1>Cộng Đồng <br><span class="text-gradient">SCP: Secret Laboratory</span> <br>Việt Nam</h1>
+                <p>Nơi hỗn loạn và trật tự cùng tồn tại. Tham gia ngay vào máy chủ I-QG Laboratory để trải nghiệm những pha rượt đuổi kịch tính và những tràng cười không ngớt.</p>
                 
-                <div class="support-card">
-                    <i class="fas fa-globe-asia"></i>
-                    <h3>Máy chủ Việt Nam</h3>
-                    <p>Máy chủ được đặt tại TP.HCM, đảm bảo độ trễ thấp nhất cho người chơi trong nước.</p>
-                    <a href="https://scplist.kr/servers/94495" target="_blank" style="font-size:0.9rem;">Xem trạng thái máy chủ</a>
+                <div class="hero-buttons">
+                    <a href="#server" class="btn btn-primary"><i class="fas fa-play"></i> Chơi Ngay</a>
+                    <a href="https://discord.gg/NA9gNP43" target="_blank" class="btn btn-discord"><i class="fab fa-discord"></i> Tham gia Discord</a>
+                </div>
+            </div>
+            <div class="hero-image reveal-right">
+                <div class="image-wrapper">
+                    <img src="images/SCPVIETNAM.png" alt="SCP SL Character">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-wifi"></i>
+                        <span>Ping Thấp</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-users"></i>
+                        <span>Đông vui</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="faq">
+    <section id="server" class="server-info section-padding">
         <div class="container">
-            <h2>Câu hỏi thường gặp</h2>
-            <div class="faq-accordion">
+            <div class="section-header reveal-bottom">
+                <h2>Thông Tin Máy Chủ</h2>
+                <p>Kết nối ngay để bắt đầu cuộc chiến sinh tồn.</p>
+            </div>
+            
+            <div class="server-box reveal-bottom">
+                <div class="server-status">
+                    <span class="pulse"></span> Online
+                </div>
+                <div class="server-details">
+                    <h3>I-QG Laboratory [Vietnam]</h3>
+                    <p class="server-ip" id="serverIp">27.74.237.111:7777
+</p> </div>
+                <button class="btn btn-outline" onclick="copyIP()">
+                    <i class="fas fa-copy"></i> Sao chép IP
+                </button>
+            </div>
+            <div class="server-link-check reveal-bottom">
+                 <a href="https://scplist.kr/servers/94495" target="_blank">Xem chi tiết trạng thái (SCPList) <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-image reveal-left">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.tHsh0FuObP2mi0D2L9XMngHaEK?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Server Room" class="rounded-img">
+                </div>
+                <div class="col-text reveal-right">
+                    <h2>Về I-QG Laboratory</h2>
+                    <p class="lead">Không chỉ là game, đây là một xã hội thu nhỏ.</p>
+                    <p>Sứ mệnh của chúng tôi là xây dựng môi trường <strong>SCP: Secret Laboratory</strong> lành mạnh, công bằng và thú vị nhất tại Việt Nam. Chúng tôi nói không với toxic và gian lận.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <i class="fas fa-server"></i>
+                            <h4>Ổn định</h4>
+                            <p>Server đặt tại TP.HCM</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>An toàn</h4>
+                            <p>Anti-cheat & Admin active</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-heart"></i>
+                            <h4>Đam mê</h4>
+                            <p>Cộng đồng nhiệt huyết</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rules" class="rules section-padding">
+        <div class="container">
+            <div class="section-header reveal-bottom">
+                <h2>Luật Lệ Cơ Bản</h2>
+                <p>Vui lòng tuân thủ để tránh bị nhốt vào lồng chứa SCP-173.</p>
+            </div>
+
+            <div class="rules-grid">
+                <div class="rule-card reveal-bottom">
+                    <div class="rule-icon">01</div>
+                    <h3>Tôn Trọng</h3>
+                    <p>Không chửi bới, xúc phạm, phân biệt vùng miền hay gây war trong server và Discord.</p>
+                </div>
+                <div class="rule-card reveal-bottom" style="transition-delay: 0.1s;">
+                    <div class="rule-icon">02</div>
+                    <h3>Không Hack/Cheat</h3>
+                    <p>Sử dụng phần mềm thứ 3 sẽ bị Ban vĩnh viễn khỏi hệ thống I-QG.</p>
+                </div>
+                <div class="rule-card reveal-bottom" style="transition-delay: 0.2s;">
+                    <div class="rule-icon">03</div>
+                    <h3>Mic Spam</h3>
+                    <p>Hạn chế la hét, bật nhạc to gây ảnh hưởng trải nghiệm người chơi khác (trừ radio).</p>
+                </div>
+                <div class="rule-card reveal-bottom" style="transition-delay: 0.3s;">
+                    <div class="rule-icon">04</div>
+                    <h3>Teaming</h3>
+                    <p>Tuân thủ luật bắt tay/liên minh giữa các phe phái theo quy định của Server.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq section-padding">
+        <div class="container">
+            <div class="section-header reveal-bottom">
+                <h2>Câu Hỏi Thường Gặp</h2>
+            </div>
+            <div class="faq-accordion reveal-bottom">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span><h4>Làm thế nào để tham gia? | Một số thắc mắc FQA!</h4></span>
+                        <h4>Làm thế nào để tham gia server?</h4>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>1.Truy cập trang đăng ký và làm theo hướng dẫn...[ĐANG THỰC HIỆN]</p>
-                        <p>2.Tham gia DISCORD bằng cách ấn biểu tượng bên dưới trang web!</p>
-                        <p>3.Liên hệ riêng bằng cách ấn vào biếu tượng Facebook/Instagram bên dưới trang web!</p>
+                        <p>Bạn chỉ cần vào game, chọn mục "Direct Connect" và nhập IP của chúng tôi, hoặc tìm kiếm "I-QG" trong danh sách server Việt Nam.</p>
                     </div>
                 </div>
-            </div> </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Tôi muốn tố cáo hack/toxic thì làm sao?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hãy tham gia Discord, vào kênh #report và gửi bằng chứng (video/hình ảnh). Admin sẽ xử lý ngay lập tức.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Server có tuyển Admin không?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Hiện tại không. Nhưng nếu có, thông tin sẽ được thông báo chính thức trên Discord!</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact" class="contact section-padding">
         <div class="container">
-            <h2>Liên hệ với chúng tôi</h2>
-            <h3>[Lưu ý: Ghi rõ ý kiến/thông tin cần hỗ trợ để chúng tôi dễ dàng xử lý. Cảm Ơn!]</h3>
-            <div class="contact-wrapper">
-                <form class="contact-form" action="https://formspree.io/f/xkgqyvyq" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="ten" placeholder="Tên của bạn" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="noi_dung" placeholder="Nội dung" rows="5" required></textarea>
-                    </div>
-                    <button type="submit">Gửi tin nhắn</button>
-                </form>
-
+            <div class="contact-wrapper reveal-bottom">
                 <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h4>Địa chỉ</h4>
-                        <p>Phường Nam Đông Hà, Tỉnh Quảng Trị</p>
-                        <p>Quận 3, Thành Phố Hồ Chí Minh</p>
-                        <p>Việt Nam</p>
+                    <h3>Liên Hệ I-QG Lab</h3>
+                    <p>Chúng tôi luôn lắng nghe ý kiến đóng góp của bạn.</p>
+                    
+                    <div class="info-list">
+                        <div class="item">
+                            <i class="fab fa-discord"></i>
+                            <span>Discord: @headrozing</span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Liên hệ riêng qua FB & Instagram</span>
+                        </div>
+                        <div class="item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Quảng Trị & TP.HCM</span>
+                        </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-headset"></i>
-                        <h4>Liên hệ trực tiếp</h4>
-                        <p>Discord: @headrozing</p>
-                        <p>[Ấn vào các biểu tượng facebook/instagram bên dưới]</p>
-                    </div>
+
                     <div class="social-links">
                         <a href="https://www.facebook.com/pham.hoang.long.512414/" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="https://discord.gg/NA9gNP43" target="_blank"><i class="fab fa-discord"></i></a>
                         <a href="https://www.instagram.com/headrozing/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+
+                <form class="contact-form" action="https://formspree.io/f/xkgqyvyq" method="POST">
+                    <h3>Gửi Tin Nhắn</h3>
+                    <div class="form-group">
+                        <input type="text" name="ten" placeholder="Tên của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email liên hệ" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="noi_dung" placeholder="Nội dung cần hỗ trợ..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Gửi Đi <i class="fas fa-paper-plane"></i></button>
+                </form>
             </div>
         </div>
     </section>
@@ -154,30 +241,29 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-col">
+                <div class="footer-brand">
                     <h4>I-QG Laboratory</h4>
-                    <p>Cộng đồng Hỗ trợ SCP: Secret Laboratory Việt Nam.</p>
+                    <p>Cộng đồng SCP: Secret Laboratory hàng đầu Việt Nam. Nơi niềm vui và nỗi sợ hòa quyện.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Liên kết nhanh</h4>
-                    <ul class="footer-links">
+                <div class="footer-links-group">
+                    <h4>Điều hướng</h4>
+                    <ul>
                         <li><a href="#home">Trang chủ</a></li>
-                        <li><a href="#about">Về chúng tôi</a></li>
-                        <li><a href="#contact">Liên hệ</a></li>
-                        <li><a href="pages/privacy_policy.html">Chính sách Quyền riêng tư</a></li>
+                        <li><a href="#rules">Luật lệ</a></li>
+                        <li><a href="#contact">Hỗ trợ</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Theo dõi chúng tôi</h4>
-                    <div class="social-links-footer">
-                        <a href="https://www.facebook.com/pham.hoang.long.512414/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://discord.gg/NA9gNP43" target="_blank"><i class="fab fa-discord"></i></a>
-                        <a href="https://www.instagram.com/headrozing/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
+                <div class="footer-legal">
+                    <h4>Pháp lý</h4>
+                    <ul>
+                        <li><a href="pages/privacy_policy.html">Quyền riêng tư</a></li>
+                        
+                    </ul>
                 </div>
             </div>
-            <div class="copyright">
-                Copyright ©2025 QT Gang. All rights reserved.
+            <div class="footer-bottom">
+                <p>&copy; 2025 QT Gang. All rights reserved.</p>
+                
             </div>
         </div>
     </footer>
