@@ -1,4 +1,4 @@
-/* --- 1. Variables & Reset (MÀU MỚI: TƯƠI SÁNG & HIỆN ĐẠI) --- */
+/* --- 1. Variables & Reset | Màu sắc chủ đề web --- */
 :root {
     --bg-dark: #0b0e29;        /* Xanh dương không gian sâu */
     --bg-card: #151a44;        /* Xanh đậm thẻ */
@@ -249,3 +249,4 @@ img { max-width: 100%; display: block; }
     .nav-menu.active { right: 0; }
     .menu-toggle { display: block; }
 }
+/* headrozing */
